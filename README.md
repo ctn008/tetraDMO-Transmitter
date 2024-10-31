@@ -22,4 +22,13 @@ start Frame Counter
 ## DMO GroupCall setup sequence 
 
 ## DMO GroupCall terminate sequence
- 
+
+## Block Diagram  
+![image](https://github.com/user-attachments/assets/4baf6ebf-0444-4bd7-bf9d-24bff403059f)
+
+pi4DQPSK Modulator:
+Đã triển khai ok trên python block.
+- Qua kiểm tra thực tế, máy thu Tetra chỉ quan tâm decode tín hiệu mà không quan tâm đến khe thời gian hay tín hiệu nhiễu gì cả. Nếu để điều chế IQ liên tục, và phát đi cả các inactive burst (như tín hiệu TMO) thì máy bộ đàm tetra vẫn thu bình thường. Như vậy máy thu Tetra sau khi đồng bộ được thời gian với nguồn phát, thì chỉ quan tâm đến khe thời gian của mình và mặc kệ các đoạn tín hiệu bên ngoài có nhiễu hay không nhiễu
+- các tín hiệu guard symbols có thể để hoặc cắt đi cũng không ảnh hưởng đến khả năng thu
+- Có thể điều chế IQ theo từng burst, hoặc điều chế IQ cho cả chuỗi tín hiệu (cả inactive burst), và zerorize các inactive burst, để phát không gây nhiễu.
+
