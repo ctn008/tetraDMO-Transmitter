@@ -170,7 +170,7 @@ blocks:
     bus_structure: null
     coordinate: [832, 4.0]
     rotation: 0
-    state: enabled
+    state: disabled
 - name: symbol_rate
   id: variable
   parameters:
@@ -267,7 +267,7 @@ blocks:
     minoutbuf: '0'
     ptt: ptt_on
     radio_id: '6081751'
-    show_txt: showTxt
+    show_txt: 'False'
     talkgroup_id: '1001'
   states:
     _io_cache: ('TetraDMO Encoder', 'DmoEncoder', [('show_txt', 'True'), ('talkgroup_id',

@@ -68,7 +68,6 @@ class pluto_DmoTransmitter_v1_0(gr.top_block, Qt.QWidget):
         ##################################################
         self.decim = decim = 9
         self.symbol_rate = symbol_rate = 18000
-        self.showTxt = showTxt = 0
         self.samp_rate = samp_rate = 80000*decim
         self.samp_per_symbol = samp_per_symbol = 2
         self.ptt_on = ptt_on = 0
@@ -81,12 +80,6 @@ class pluto_DmoTransmitter_v1_0(gr.top_block, Qt.QWidget):
         # Blocks
         ##################################################
 
-        self._showTxt_choices = {'Pressed': bool(1), 'Released': bool(0)}
-
-        _showTxt_toggle_switch = qtgui.GrToggleSwitch(self.set_showTxt, 'showText', self._showTxt_choices, False, "green", "gray", 4, 50, 1, 1, self, 'value')
-        self.showTxt = _showTxt_toggle_switch
-
-        self.top_layout.addWidget(_showTxt_toggle_switch)
         _ptt_on_push_button = Qt.QPushButton('Push_To_Talk')
         _ptt_on_push_button = Qt.QPushButton('Push_To_Talk')
         self._ptt_on_choices = {'Pressed': 1, 'Released': 0}
@@ -232,7 +225,7 @@ class pluto_DmoTransmitter_v1_0(gr.top_block, Qt.QWidget):
         self.iio_pluto_sink_0.set_filter_params('Auto', '', 0, 0)
         self.epy_block_1 = epy_block_1.Pi4DQPSK(envelope_in=False)
         self.epy_block_0_0 = epy_block_0_0.SrcChCoder(mic_gain=4)
-        self.epy_block_0 = epy_block_0.DmoEncoder(show_txt=showTxt, talkgroup_id=1001, radio_id=6081751, ptt=ptt_on)
+        self.epy_block_0 = epy_block_0.DmoEncoder(show_txt=False, talkgroup_id=1001, radio_id=6081751, ptt=ptt_on)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
         self.audio_source_0 = audio.source(audio_rate, '', True)
 
@@ -243,8 +236,8 @@ class pluto_DmoTransmitter_v1_0(gr.top_block, Qt.QWidget):
         self.connect((self.audio_source_0, 0), (self.epy_block_0_0, 0))
         self.connect((self.blocks_char_to_float_0, 0), (self.qtgui_time_sink_x_1, 0))
         self.connect((self.epy_block_0, 0), (self.blocks_char_to_float_0, 0))
-        self.connect((self.epy_block_0, 0), (self.epy_block_1, 0))
         self.connect((self.epy_block_0, 1), (self.epy_block_1, 1))
+        self.connect((self.epy_block_0, 0), (self.epy_block_1, 0))
         self.connect((self.epy_block_0_0, 0), (self.epy_block_0, 0))
         self.connect((self.epy_block_1, 0), (self.mmse_resampler_xx_0, 0))
         self.connect((self.epy_block_1, 0), (self.qtgui_time_sink_x_1_0_0, 0))
@@ -274,12 +267,6 @@ class pluto_DmoTransmitter_v1_0(gr.top_block, Qt.QWidget):
     def set_symbol_rate(self, symbol_rate):
         self.symbol_rate = symbol_rate
         self.qtgui_time_sink_x_1_0_0.set_samp_rate(self.symbol_rate*2)
-
-    def get_showTxt(self):
-        return self.showTxt
-
-    def set_showTxt(self, showTxt):
-        self.showTxt = showTxt
 
     def get_samp_rate(self):
         return self.samp_rate
