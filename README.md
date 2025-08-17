@@ -71,11 +71,11 @@ start Frame Counter
  Nếu là các burst 6, 12 thì gửi thêm DSB ở TN3
  Nếu là burst 18 thì gửi Dmac-Sync
 
-## DMO GroupCall setup sequence 
+### DMO GroupCall setup sequence 
 
-## DMO GroupCall terminate sequence
+### DMO GroupCall terminate sequence
 
-## Block Diagram  
+### Block Diagram  
 ![image](https://github.com/user-attachments/assets/4baf6ebf-0444-4bd7-bf9d-24bff403059f)
 
 pi4DQPSK Modulator:
