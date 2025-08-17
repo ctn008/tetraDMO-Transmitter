@@ -1,4 +1,60 @@
-# TetraDMO-Transmitter
+
+---
+
+## 2️⃣ **TETRA Transmitter (PlutoSDR)**
+
+```markdown
+# TETRA Transmitter (PlutoSDR)
+
+## 📌 Overview
+This project implements a **TETRA DMO transmitter** using an **Analog Devices PlutoSDR**, GNU Radio, and custom Python/C++ blocks.  
+It encodes and transmits audio signals in DMO mode, which can be received and played back on a TETRA handset.  
+
+---
+
+## 🛠️ Features
+- Real-time audio encoding and modulation for TETRA DMO  
+- Transmission via **PlutoSDR** hardware  
+- Custom GNU Radio blocks in Python and C++  
+- Verified end-to-end system with TETRA handset reception  
+
+---
+
+## 🔧 Tools & Technologies
+- **Hardware:** PlutoSDR  
+- **Software:** GNU Radio, Python, C++  
+- **OS:** Linux (Ubuntu recommended)  
+- **Protocols:** TETRA DMO  
+
+---
+
+## 🚀 How to Run
+1. Clone this repo:  
+   ```bash
+   git clone https://github.com/yourusername/tetra-transmitter.git  
+2. Install dependencies (GNU Radio, PlutoSDR drivers, Python libraries).  
+3. Connect PlutoSDR device. 
+4. Run the GNU Radio flowgraph / transmitter application.  
+
+## 📊 Results
+
+- Encoded and transmitted audio via TETRA DMO
+
+- Audio successfully received on a TETRA handset
+
+## 📚 Learning & Contribution
+
+- RF transmission and SDR integration
+
+- Digital modulation and TETRA DMO protocol
+
+- SDR development in Python and C++
+
+- End-to-end system testing and validation
+
+---
+
+## Additional Notes
 
 The project aims to implement a TETRA DMO transmitter using a PlutoSDR device, GNU Radio toolkit, and custom Python/C++ blocks; successfully encoded, modulated and transmitted voice from PC microphone; audio received live on a TETRA handset.
 
