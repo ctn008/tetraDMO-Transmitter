@@ -1,4 +1,6 @@
-# tetraDMO-Transmitter
+# TetraDMO-Transmitter
+
+The project aims to implement a TETRA DMO transmitter using a PlutoSDR device, GNU Radio toolkit, and custom Python/C++ blocks; successfully encoded, modulated and transmitted voice from PC microphone; audio received live on a TETRA handset.
 
 1. USER_INTERFACE
 Thiết kế trên GNURadio, đầu vào là mic. 
