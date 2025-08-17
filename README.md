@@ -1,7 +1,4 @@
-
----
-
-## 2️⃣ **TETRA Transmitter (PlutoSDR)**
+# **TETRA Transmitter (PlutoSDR)**
 
 ```markdown
 # TETRA Transmitter (PlutoSDR)
